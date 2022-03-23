@@ -10,7 +10,7 @@ app.engine('handlebars', engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
-    const term = req?.query?.term
+    const term = req.query?.term
     fetch(`https://g.tenor.com/v1/search?q=${term || ""}&key=${process.env.API_KEY}&limit=10`)
         .then(res => res.json())
         .then(data => {
