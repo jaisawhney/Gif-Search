@@ -3,7 +3,8 @@ const express = require('express');
 const app = express();
 const {engine} = require('express-handlebars');
 
-app.set("views", "./views");
+app.set('views', './views');
+app.use(express.static('public'));
 
 app.engine('handlebars', engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
